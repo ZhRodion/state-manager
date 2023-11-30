@@ -1,0 +1,19 @@
+.shoppingCartBtn {
+	width: 45px;
+	height: 45px;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+
+	&:hover {
+		.cartImage {
+			transform: scale(1.2);
+		}
+	}
+}
+
+.cartImage {
+	transition: all 0.3s ease-in-out;
+}

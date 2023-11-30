@@ -1,0 +1,15 @@
+.catalogItem {
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border: 1px solid transparent;
+	border-radius: 50px;
+}
+
+.catalogText {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
