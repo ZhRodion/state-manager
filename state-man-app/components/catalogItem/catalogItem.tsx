@@ -27,6 +27,8 @@ const CatalogItem: FC<CatalogItemProps> = ({
 				width={300}
 				height={300}
 				loading='lazy'
+				priority={false}
+				quality='100'
 				alt='.Product card Image'
 			></Image>
 			<div className={styles.catalogText}>
@@ -35,6 +37,9 @@ const CatalogItem: FC<CatalogItemProps> = ({
 				<span className={styles.catalogCategory}>{category}</span>
 				<p className={styles.catalogPrice}>Стоимость вещи {price} $</p>
 			</div>
+			<button className={styles.productCardBtn} type='button'>
+				Купить
+			</button>
 		</div>
 	)
 }
