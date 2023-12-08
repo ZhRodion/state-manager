@@ -1,5 +1,6 @@
 import ShoppingCartButton from '@/components/cartBtn/cartBtn'
 import Header from '@/components/header/header'
+import { Providers } from '@/components/providersReduxToolkit/providersReduxToolkit'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.scss'
@@ -18,12 +19,14 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>
-				<Header>
-					<ShoppingCartButton />
-				</Header>
-				<main className={'main'}>{children}</main>
-			</body>
+			<Providers>
+				<body className={inter.className}>
+					<Header>
+						<ShoppingCartButton />
+					</Header>
+					<main className={'main'}>{children}</main>
+				</body>
+			</Providers>
 		</html>
 	)
 }

@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { FC } from 'react'
+import { useDispatch } from 'react-redux'
+import { buyItem } from '../../stores/catalog.actions'
 import styles from '../catalogItem/catalogItem.module.scss'
 
 export interface CatalogItemProps {
-	id: number
+	id: string
 	title: string
 	price: number
 	description: string
@@ -19,6 +21,12 @@ const CatalogItem: FC<CatalogItemProps> = ({
 	category,
 	image,
 }) => {
+	const dispatch = useDispatch()
+
+	const handleBuyClick = () => {
+		dispatch(buyItem(id))
+	}
+
 	return (
 		<div className={styles.catalogItem}>
 			<Image
@@ -37,7 +45,11 @@ const CatalogItem: FC<CatalogItemProps> = ({
 				<span className={styles.catalogCategory}>{category}</span>
 				<p className={styles.catalogPrice}>Стоимость вещи {price} $</p>
 			</div>
-			<button className={styles.productCardBtn} type='button'>
+			<button
+				className={styles.productCardBtn}
+				type='button'
+				onClick={handleBuyClick}
+			>
 				Купить
 			</button>
 		</div>
